@@ -15,14 +15,18 @@ class Board extends Model
     ];
 
     public function categories() {
-    	return this->hasMany(Category::class);
-    };
+    	return $this->hasMany(Category::class);
+    }
 
     public function users() {
-    	return this->hasMany(User::class);
-    };
+    	return $this->hasMany(User::class);
+    }
 
     public function teams() {
-    	return this->hasMany(Team::class);
-    };
+    	return $this->hasMany(Team::class);
+    }
+
+    public function author() {
+        return $this->belongsTo(User::class, 'author_id');
+    }
 }

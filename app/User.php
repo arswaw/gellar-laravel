@@ -24,7 +24,9 @@ class User extends Authenticatable
         'title',
         'photo',
         'time_zone',
-        'active'
+        'active',
+        'authentication_token',
+        'token_expiration'
     ];
 
     /**
@@ -37,10 +39,10 @@ class User extends Authenticatable
     ];
 
     public function boards() {
-        return this->hasMany(Board::class);
-    };
+        return $this->hasMany(Board::class);
+    }
 
     public function teams() {
-        return this->hasMany(Team::class);
-    };
+        return $this->hasMany(Team::class);
+    }
 }
