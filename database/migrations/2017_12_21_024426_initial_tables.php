@@ -80,17 +80,18 @@ class InitialTables extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('file_name');
-            $table->string('resolution');
-            $table->string('file_size');
-            $table->string('maker');
-            $table->string('model');
-            $table->boolean('flash');
-            $table->string('focal_length');
-            $table->string('white_balance');
-            $table->string('aperture');
+            $table->string('resolution')->nullable();
+            $table->string('file_size')->nullable();
+            $table->string('maker')->nullable();
+            $table->integer('todo_id');
+            $table->string('model')->nullable();
+            $table->boolean('flash')->nullable();
+            $table->string('focal_length')->nullable();
+            $table->string('white_balance')->nullable();
+            $table->string('aperture')->nullable();
             $table->integer('author_id')->unsigned();
-            $table->string('exposure_time');
-            $table->integer('ISO');
+            $table->string('exposure_time')->nullable();
+            $table->integer('ISO')->nullable();
             $table->string('storage_URL')->unique();
             $table->timestamps();
 

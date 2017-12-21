@@ -15,7 +15,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'is_admin',
+        'phone_number',
+        'title',
+        'photo',
+        'time_zone',
+        'active'
     ];
 
     /**
@@ -26,4 +35,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function boards() {
+        return this->hasMany(Board::class);
+    };
+
+    public function teams() {
+        return this->hasMany(Team::class);
+    };
 }
