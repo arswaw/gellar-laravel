@@ -21,10 +21,10 @@ Artisan::command('inspire', function () {
 
 Artisan::command('boardmaker', function () {
 	$user = User::create([
-		'first_name' => 'Alex',
-		'last_name' => 'Otten',
+		'first_name' => 'John',
+		'last_name' => 'Smith',
 		'email' => 'email@example.com',
-		'password' => 'ScoobySnacks',
+		'password' => 'derp',
 		'is_admin' => 1,
 		'phone_number' => '1234567890',
 		'title' => 'Site Admin',
